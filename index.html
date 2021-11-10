@@ -342,12 +342,28 @@
 			width: auto;
 		}
 
+		.inf-desktop {
+			display: block;
+		}
+
+		.inf-phone {
+			display: none;
+		}
+
 		@media (max-width: 767px) {
 			#evt-info_h {
 				display: none;
 			}
 
 			#evt-info_v {
+				display: block;
+			}
+
+			.inf-desktop {
+				display: none;
+			}
+
+			.inf-phone {
 				display: block;
 			}
 
@@ -433,6 +449,14 @@
 
 		/* MEDIA QUERY PARA VERSIÓN MOBILE */
 		@media (max-width: 576px) {
+
+			.inf-desktop {
+				display: none;
+			}
+
+			.inf-phone {
+				display: block;
+			}
 
 			#evt-video_cel {
 				display: block;
@@ -526,9 +550,13 @@
 
 			<!-- VIDEO CENTRAL SE COMPORTA SEGÚN DIMENCIONES DE LA PANTALLA Y EL TIPO DE DISPOSITIVO -->
 			<div id="evt-video_central" class="evt-abs evt-video-central">
-				<video width="100%" height="100%" controls>
+				<!-- <video width="100%" height="100%" autoplay  muted>
 					<source src="./video/Video.mp4" type="video/mp4">
-				</video>
+				</video> -->
+				<iframe width="100%" height="100%" src="https://www.youtube.com/embed/HLski8fXvak"
+					title="YouTube video player" frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen></iframe>
 			</div>
 
 			<!-- EL VÍNCULO PARA EL VS ES EL NOMBRE DEL MÓDULO LA QUE SE QUIERE RE DIRIGIR, ESTE VALOR 
@@ -575,7 +603,7 @@
 					<path fill="currentColor"
 						d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z">
 					</path>
-					<img style="width: 400%; height: 100%; margin-left: 100%;" src="./img/eventtia.png" alt="">
+					<img style="width: 400%; height: 100%; margin-left: 100%;" src="./img/pierre fabre.png" alt="">
 				</svg>
 			</div>
 			<audio id="evt-bg_audio" autoplay="" loop>
@@ -584,9 +612,11 @@
 		</div>
 		<!-- POPUP DE LA INFORMACIÓN GENERAL -->
 		<div id="evt-info" class="evt-info">
-			<div class="evt-information">
-				<img src="./img/Halo_4_Masterchief.jpg" id="info_h" alt="Information">
-				<!-- <img src="./img/information_vertical.png" id="info_v" alt="Information"> -->
+			<div class="evt-information inf-desktop">
+				<img src="./img/LOGO PF_QUADRI.jpg" id="info_h" alt="Information">
+			</div>
+			<div class="evt-information inf-phone">
+				<img src="./img/information_vertical.png" id="info_v" alt="Information">
 			</div>
 			<!-- BOTÓN PARA CERRAR EL POPUP-->
 			<div id="evt-close-btn" onclick="document.getElementById('evt-info').classList.remove('open')">
@@ -613,6 +643,7 @@
 		</div>
 	</div>
 	<script>
+		document.getElementById('vid').play();
 	</script>
 </body>
 
